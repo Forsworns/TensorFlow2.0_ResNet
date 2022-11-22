@@ -1,13 +1,19 @@
-# TensorFlow2.0_ResNet
-A ResNet(**ResNet18, ResNet34, ResNet50, ResNet101, ResNet152**) implementation using TensorFlow-2.0
-
-See https://github.com/calmisential/Basic_CNNs_TensorFlow2.0 for more CNNs.
+Modified according to https://github.com/calmisential/TensorFlow2.0_ResNet
 
 ## Train
-1. Requirements:
+
+Requirements:
 + Python >= 3.6
 + Tensorflow == 2.0.0
-2. To train the ResNet on your own dataset, you can put the dataset under the folder **original dataset**, and the directory should look like this:
+
+1. Download the VOC2012 dataset
+```
+wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
+tar xvf ./VOCtrainval_11-May-2012.tar
+./VOC2012_resplit.py # invalid behavior, simply to run this repo
+```
+
+2. The VOC2012 dataset will be put under the folder **original dataset**, and the directory would look like this:
 ```
 |——original dataset
    |——class_name_0
@@ -18,14 +24,4 @@ See https://github.com/calmisential/Basic_CNNs_TensorFlow2.0 for more CNNs.
 3. Run the script **split_dataset.py** to split the raw dataset into train set, valid set and test set.
 4. Change the corresponding parameters in **config.py**.
 5. Run **train.py** to start training.
-## Evaluate
-Run **evaluate.py** to evaluate the model's performance on the test dataset.
-
-## The networks I have implemented with tensorflow2.0:
-+ [ResNet18, ResNet34, ResNet50, ResNet101, ResNet152](https://github.com/calmisential/TensorFlow2.0_ResNet)
-+ [InceptionV3](https://github.com/calmisential/TensorFlow2.0_InceptionV3)
-
-
-## References
-1. The original paper: https://arxiv.org/abs/1512.03385
-2. The TensorFlow official tutorials: https://tensorflow.google.cn/beta/tutorials/quickstart/advanced
+5. Run **evaluate.py** to start training.
