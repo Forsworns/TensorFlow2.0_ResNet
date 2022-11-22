@@ -1,7 +1,5 @@
 Modified according to https://github.com/calmisential/TensorFlow2.0_ResNet
 
-## Train
-
 Requirements:
 + Python >= 3.6
 + Tensorflow == 2.0.0
